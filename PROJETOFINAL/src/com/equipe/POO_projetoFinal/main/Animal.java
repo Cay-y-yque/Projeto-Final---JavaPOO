@@ -81,10 +81,5 @@ public class Animal extends Usuario{
 	public int getId() {
 		return id;
 	}
-
-	public static void main(String[] args) {
-		Animal animal = new Animal();
-
-	}
 	
 }
