@@ -1,4 +1,6 @@
 package com.equipe.POO_projetoFinal.main;
+import java.util.ArrayList;
+import java.util.List;
 
 public class Animal extends Usuario{
 	private String raca;
@@ -8,22 +10,22 @@ public class Animal extends Usuario{
 	private double altura;
 	private final int id;
 	private static int contador;
+	private static List<Animal> listaAnimais = new ArrayList<>();
 	
-	Animal(){
+	public Animal(){
 		super();
 		
 		contador++;
 		id = contador;
 	}
 	
-	Animal(String nome, int idade, String raca, String personalidade, double peso, String condicoes, double altura, int id){
+	public Animal(String nome, int idade, String raca, String personalidade, double peso, String condicoes, double altura){
 		super(nome, idade);
 		this.raca = raca;
 		this.personalidade = personalidade;
 		this.peso = peso;
 		this.condicoes = condicoes;
 		this.altura = altura;
-		this.id = id;
 		
 		contador++;
 		id = contador;
@@ -78,8 +80,17 @@ public class Animal extends Usuario{
 		this.altura = altura;
 	}
 
+	public static List<Animal> getListaAnimais() {
+		return listaAnimais;
+	}
+
+	public static void setListaAnimais(List<Animal> listaAnimais) {
+		Animal.listaAnimais = listaAnimais;
+	}
+	
 	public int getId() {
 		return id;
 	}
+
 	
 }
