@@ -5,11 +5,13 @@ public abstract class Usuario {
     private int idade;
     private String[] listaAnimais;
     
-    public Usuario(String nome, int idade){
+    public Usuario(String nome, int idade, String[] listaAnimais){
     	this.idade = idade;
     	this.nome = nome;
     }
-    
+	
+    public Usuario() {}
+	
     public abstract void registrar();
     
 	public String getNome() {
