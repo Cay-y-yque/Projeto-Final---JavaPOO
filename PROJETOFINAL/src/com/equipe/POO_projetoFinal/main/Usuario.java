@@ -5,7 +5,7 @@ public abstract class Usuario {
     private int idade;
     private String[] listaAnimais;
     
-    public Usuario(String nome, int idade, String[] listaAnimais){
+    public Usuario(String nome, int idade){
     	this.idade = idade;
     	this.nome = nome;
     }
