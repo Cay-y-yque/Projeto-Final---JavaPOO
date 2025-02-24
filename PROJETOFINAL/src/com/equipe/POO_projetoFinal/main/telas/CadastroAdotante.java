@@ -22,9 +22,9 @@ import java.awt.event.ActionEvent;
 
 public class CadastroAdotante extends JFrame {
 	
-	private static final long serialVersionUID = 1L;
-	public static List<Adotante> listaAdotantes = new ArrayList<>();
-	private JPanel contentPane;
+    private static final long serialVersionUID = 1L;
+    public static List<Adotante> listaAdotantes = new ArrayList<>();
+    private JPanel contentPane;
     private JTextField txtNome;
     private JTextField txtTelefone;
     private JTextField txtEmail;
