@@ -23,7 +23,6 @@ import java.awt.event.ActionEvent;
 public class CadastroAdotante extends JFrame {
 	
     private static final long serialVersionUID = 1L;
-    public static List<Adotante> listaAdotantes = new ArrayList<>();
     private JPanel contentPane;
     private JTextField txtNome;
     private JTextField txtTelefone;
@@ -127,10 +126,19 @@ public class CadastroAdotante extends JFrame {
             listaAdotantes.add(adotante);
             
             JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+            limpar();
             
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Erro no cadastro: " + ex.getMessage(),
                                         "Erro", JOptionPane.ERROR_MESSAGE);
         }
+    }
+    private void limpar() {
+        txtNome.setText("");
+        spnIdade.setValue(18);
+        txtTelefone.setText("");
+        txtEmail.setText("");
+        chkMoradiaAberta.setSelected(false);
+        cmbTamanhoMoradia.setSelectedIndex(0);
     }
 }
