@@ -166,11 +166,15 @@ public class CadastroAnimal extends JFrame {
       	String raca = txtRaca.getText();
       	String condicao = txtCondicao.getText();
       	String personalidade = txtPersonalidade.getText();
+      	double contador = (double)spnContador.getValue();
+      	double peso = (double)peso.getValue();
+      	double getAltura() = (double) altura.getValue();
       
-          Animal animal = new Animal(nome, id, raca, personalidade, contador, condicao, peso);
+        
+		Animal animal = new Animal(nome, raca, personalidade, contador, condicao, peso, getAltura());
           
           listaAnimais.add(animal);
-          
+         
           JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
 		
 		
