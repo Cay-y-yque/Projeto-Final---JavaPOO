@@ -1,6 +1,5 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
-
 import java.awt.Dimension;
 import java.awt.EventQueue;
 import java.awt.FlowLayout;
