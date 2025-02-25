@@ -132,7 +132,7 @@ public class CadastroAdotante extends JFrame {
         	
             Adotante adotante = new Adotante(nome, idade, telefone, email, moradiaAberta, tamanhoMoradia);
             
-            Adotante.registrar();
+            adotante.registrar();
 
 	    if(!adotante.adotar(idAnimal)) {
                 throw new Exception("Animal com ID " + idAnimal + " não encontrado!");
