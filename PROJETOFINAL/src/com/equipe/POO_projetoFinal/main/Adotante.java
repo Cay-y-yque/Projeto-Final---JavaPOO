@@ -1,6 +1,7 @@
 package com.equipe.POO_projetoFinal.main;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Adotante extends Usuario {
@@ -14,7 +15,7 @@ public class Adotante extends Usuario {
 	// Método construtor
 	public Adotante(String nome, int idade, String telefone, String email, boolean moradiaAberta,
 			String tamanhoDeMoradia) {
-		super(nome, idade, listaAnimais);
+		super(nome, idade);
 		this.telefone = telefone;
 		this.email = email;
 		this.moradiaAberta = moradiaAberta;
