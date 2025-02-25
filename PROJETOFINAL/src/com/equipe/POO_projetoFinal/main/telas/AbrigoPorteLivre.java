@@ -44,9 +44,11 @@ public class AbrigoPorteLivre extends JFrame {
 	 * Create the frame.
 	 */
 	public AbrigoPorteLivre() {
+		setResizable(false);
 		setTitle("ABRIGO PORTE LIVRE");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
+		
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(255, 255, 255));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
@@ -67,24 +69,22 @@ public class AbrigoPorteLivre extends JFrame {
 		
 		JButton btnCadastrarAdotante = new JButton("Cadastrar Adotante");
 		btnCadastrarAdotante.setBounds(230, 46, 157, 33);
-		//TODO: fazer botão criar nova tela de cadastro para o Adotante
-		btnCadastrarAdotante.addActionListener(e -> abrirCadastro("Adotante"));
+		//cria nova tela de cadastro para o Adotante
+		btnCadastrarAdotante.addActionListener(e -> cadastrarAdotante());
 		contentPane.add(btnCadastrarAdotante);
 		
 		JButton btnListarAnimais = new JButton("Listar Animais");
 		btnListarAnimais.setBounds(45, 89, 157, 33);
-		//TODO: fazer botão listar todos os animais para adoção na tela 
-		btnListarAnimais.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Carregando lista de animais no abrigo...");	}
-		});
+		//lista todos os animais para adoção na tela
+		btnListarAnimais.addActionListener(e -> listarAnimaisDoAbrigo());
+		
 		contentPane.add(btnListarAnimais);
 		
 		JButton btnListarAdotantes = new JButton("Listar Adotantes");
 		btnListarAdotantes.setBounds(212, 89, 157, 33);
 		
 		//Lista os adotantes interessados/na fila de espera em uma nova tela
-		btnListarAdotantes.addActionListener(e -> abrirListaAdotante());
+		btnListarAdotantes.addActionListener(e -> ListarAdotante());
 		contentPane.add(btnListarAdotantes);
 		
 		JLabel lblNewLabel = new JLabel("BEM-VINDO AO DOMÍNIO DO ABRIGO O QUE GOSTARIA DE FAZER AGORA?");
@@ -95,14 +95,26 @@ public class AbrigoPorteLivre extends JFrame {
 		contentPane.add(lblNewLabel);
 	}
 	// Método para criar nova tela
-	private void abrirListaAdotante() {
+	private void ListarAdotante() {
 		ListaAdotantes listaDeAdotante = new ListaAdotantes();
 		listaDeAdotante.setVisible(true);
 	}
 	
-	private void abrirCadastro(String tipo) {
-		// Colocar nome da classe da tela de cadastro
-		//TelaCadastro telaDeCadastro = new TelaCadastro(tipo);
-		//telaCadastro.setVisible(true);
+	private void listarAnimaisDoAbrigo() {
+		AnimaisDoAbrigo animalDoAbrigo = new AnimaisDoAbrigo();
+		animalDoAbrigo.setVisible(true);
 	}
-}
+	
+	private void cadastrarAdotante() {
+		// Colocar nome da classe da tela de cadastro
+		CadastroAdotante cadastroAdotante = new CadastroAdotante();
+		cadastroAdotante.setVisible(true);
+	}
+	
+	// QUANDO HOUVER UMA CLASSE CHAMADA CadastroAnimal -> RETIRE O COMENTARIO!!
+	
+	//private void cadastrarAnimal() {
+		//CadastroAnimal cadastroAnimal = new CadastroAnimal();
+		//cadastroAnimal.setVisible();
+	//}
+	
