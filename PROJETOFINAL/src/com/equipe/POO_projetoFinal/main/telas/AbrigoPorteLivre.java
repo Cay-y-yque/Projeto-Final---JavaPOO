@@ -45,7 +45,7 @@ public class AbrigoPorteLivre extends JFrame {
 	 */
 	public AbrigoPorteLivre() {
 		setResizable(false);
-		setTitle("ABRIGO PORTE LIVRE");
+		setTitle("Patinhas do Instituto");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 450, 300);
 		
