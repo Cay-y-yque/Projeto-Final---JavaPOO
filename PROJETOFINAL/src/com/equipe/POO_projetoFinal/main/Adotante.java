@@ -1,28 +1,29 @@
 package com.equipe.POO_projetoFinal.main;
 
-public abstract class Adotante extends Usuario {
+import java.util.ArrayList;
+import java.util.List;
+
+public class Adotante extends Usuario {
 	private String telefone;
 	private String email;
 	private boolean moradiaAberta;
 	private String tamanhoDeMoradia;
-	private String[] listaAdotantes;
+	public static List<Adotante> listaAdotantes = new ArrayList<>();
 
 	// Método construtor
 	public Adotante(String nome, int idade, String[] listaAnimais, String telefone, String email, boolean moradiaAberta,
-			String tamanhoDeMoradia, String[] listaAdotantes) {
+			String tamanhoDeMoradia) {
 		super(nome, idade, listaAnimais);
 		this.telefone = telefone;
 		this.email = email;
 		this.moradiaAberta = moradiaAberta;
 		this.tamanhoDeMoradia = tamanhoDeMoradia;
-		this.listaAdotantes = listaAdotantes;
 	}
 	
 	public Adotante() {
 		super();
 	}
 	
-
 	public String getTelefone() {
 		return telefone;
 	}
@@ -37,7 +38,6 @@ public abstract class Adotante extends Usuario {
 		this.email = email;
 	}
 
-
 	public boolean isMoradiaAberta() {
 		return moradiaAberta;
 	}
@@ -45,22 +45,12 @@ public abstract class Adotante extends Usuario {
 		this.moradiaAberta = moradiaAberta;
 	}
 
-
 	public String getTamanhoDeMoradia() {
 		return tamanhoDeMoradia;
 	}
 	public void setTamanhoDeMoradia(String tamanhoDeMoradia) {
 		this.tamanhoDeMoradia = tamanhoDeMoradia;
 	}
-
-
-	public String[] getListaAdotantes() {
-		return listaAdotantes;
-	}
-	public void setListaAdotantes(String[] listaAdotantes) {
-		this.listaAdotantes = listaAdotantes;
-	}
-
 
 	public abstract boolean adotar(int id);
 	
