@@ -134,12 +134,14 @@ public class CadastroAdotante extends JFrame {
             
             adotante.registrar();
 
-	    if(!adotante.adotar(idAnimal)) {
-                throw new Exception("Animal com ID " + idAnimal + " não encontrado!");
-            }
-            
-            JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
+	    if(adotante.adotar(idAnimal)) {
+            JOptionPane.showMessageDialog(this, "Cadastro e adoção realizados com sucesso!");
             limpar();
+            } else {
+            JOptionPane.showMessageDialog(this, "Animal não encontrado! Cadastro cancelado.",
+                                        "Erro", JOptionPane.ERROR_MESSAGE);
+            Adotante.listaAdotantes.remove(adotante);
+        }
 		
         } catch (NumberFormatException ex) {
             JOptionPane.showMessageDialog(this, "ID do animal inválido! Digite um número válido.",
