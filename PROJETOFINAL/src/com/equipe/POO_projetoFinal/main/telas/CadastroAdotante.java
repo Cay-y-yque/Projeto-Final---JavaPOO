@@ -123,7 +123,7 @@ public class CadastroAdotante extends JFrame {
         	
             Adotante adotante = new Adotante(nome, idade, telefone, email, moradiaAberta, tamanhoMoradia);
             
-            listaAdotantes.add(adotante);
+            Adotante.listaAdotantes.add(adotante);
             
             JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
             limpar();
