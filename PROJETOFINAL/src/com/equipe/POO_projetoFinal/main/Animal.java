@@ -34,11 +34,6 @@ public class Animal extends Usuario{
 	public String pegarPorte() {
 		return "PlaceHolder";
 	}
-	
-	@Override
-	public String registrar() {
-		return "PlaceHolder";
-	}
 
 	public String getRaca() {
 		return raca;
