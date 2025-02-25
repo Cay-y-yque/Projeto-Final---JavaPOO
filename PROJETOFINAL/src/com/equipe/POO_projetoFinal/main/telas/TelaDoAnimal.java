@@ -1,7 +1,6 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
 import javax.swing.JPanel;
-
 import java.awt.Font;
 import javax.swing.ImageIcon;
 import javax.swing.JFrame;
