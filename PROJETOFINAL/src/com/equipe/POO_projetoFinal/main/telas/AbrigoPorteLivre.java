@@ -1,4 +1,4 @@
-package com.equipe.POO_projetoFinal.UI;
+package com.equipe.POO_projetoFinal.main.telas;
 
 import java.awt.Color;
 import java.awt.EventQueue;
