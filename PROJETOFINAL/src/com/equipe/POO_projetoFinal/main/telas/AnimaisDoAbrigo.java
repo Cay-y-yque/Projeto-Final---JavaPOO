@@ -79,17 +79,3 @@ public class AnimaisDoAbrigo extends JFrame{
 		TelaDoAnimal telaA = new TelaDoAnimal(id); // ela instancia uma tela e deixa ela visivel.
 		telaA.setVisible(true);
 	}
-	
-	public static void main(String[] args) {
-		EventQueue.invokeLater(new Runnable() {
-			public void run() {
-				try {
-					AnimaisDoAbrigo frame = new AnimaisDoAbrigo();
-					frame.setVisible(true);
-				} catch (Exception e) {
-					e.printStackTrace();
-				}
-			}
-		});
-	}
-}
