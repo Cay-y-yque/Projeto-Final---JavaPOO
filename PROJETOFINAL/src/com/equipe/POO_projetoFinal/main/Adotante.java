@@ -9,6 +9,7 @@ public class Adotante extends Usuario {
 	private boolean moradiaAberta;
 	private String tamanhoDeMoradia;
 	public static List<Adotante> listaAdotantes = new ArrayList<>();
+	private List<Animal> animaisAdotados = new ArrayList<>();
 
 	// Método construtor
 	public Adotante(String nome, int idade, String telefone, String email, boolean moradiaAberta,
@@ -54,10 +55,20 @@ public class Adotante extends Usuario {
 
 	@Override
 	public void registrar() {
+		Adotante.listaAdotantes.add(this);
 	}
 
 	public boolean adotar(int id) {
-		return false;
+		Iterator<Animal> iterator = Animal.getListaAnimais().iterator();
+                while(iterator.hasNext()) {
+                    Animal animal = iterator.next();
+                    if(animal.getId() == id) {
+                        animaisAdotados.add(animal);
+                        iterator.remove();
+                        return true;
+                    }
+                }
+	return false;
 	}
 
 	public boolean devolverAnimal(int id) {
