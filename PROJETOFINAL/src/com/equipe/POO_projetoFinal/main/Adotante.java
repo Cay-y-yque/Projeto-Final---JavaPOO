@@ -11,7 +11,7 @@ public class Adotante extends Usuario {
 	public static List<Adotante> listaAdotantes = new ArrayList<>();
 
 	// Método construtor
-	public Adotante(String nome, int idade, String[] listaAnimais, String telefone, String email, boolean moradiaAberta,
+	public Adotante(String nome, int idade, String telefone, String email, boolean moradiaAberta,
 			String tamanhoDeMoradia) {
 		super(nome, idade, listaAnimais);
 		this.telefone = telefone;
@@ -52,8 +52,15 @@ public class Adotante extends Usuario {
 		this.tamanhoDeMoradia = tamanhoDeMoradia;
 	}
 
-	public abstract boolean adotar(int id);
-	
-	public abstract boolean devolverAnimal(int id);
-	
+	@Override
+	public void registrar() {
+	}
+
+	public boolean adotar(int id) {
+		return false;
+	}
+
+	public boolean devolverAnimal(int id) {
+		return false;
+	}
 }
