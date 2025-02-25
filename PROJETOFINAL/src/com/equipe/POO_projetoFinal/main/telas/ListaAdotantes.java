@@ -1,4 +1,4 @@
-package com.equipe.POO_projetoFinal.UI;
+package com.equipe.POO_projetoFinal.main.telas;
 
 import java.awt.EventQueue;
 
@@ -33,25 +33,27 @@ public class ListaAdotantes extends JFrame {
 	 * Create the frame.
 	 */
 	public ListaAdotantes() {
+		setResizable(false);
 		setTitle("Adotantes interesados");
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-		setBounds(100, 100, 450, 300);
+		setBounds(100, 100, 740, 800);
 		contentPane = new JPanel();
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
 
 		setContentPane(contentPane);
 		
 		//Array com o nome das colunas
-		String[] info = {"Telefone","E-MAIL","Tipo de moradia",};
+		String[] info = {"Nome","Telefone","E-MAIL","Tipo de moradia",};
 		
 		DefaultTableModel TabelaDeAdotantes = new DefaultTableModel(info,0);
 		
 		JTable tabela = new JTable(TabelaDeAdotantes);
 		tabela.setEnabled(false);
 		
-		TabelaDeAdotantes.addRow(new Object[]{"55-9 8127-4873", "simpaeio@gmail.com", "Grande",});
-		
+		TabelaDeAdotantes.addRow(new Object[]{"NOME","TELEFONE", "E-MAIL", "MORADIA",});
+		TabelaDeAdotantes.addRow(new Object[]{"Cayque","55-9 2893-2197", "cayqueminecraft@gmail.com","Grande"});
 		contentPane.add(tabela);
 	}
 
 }
+
