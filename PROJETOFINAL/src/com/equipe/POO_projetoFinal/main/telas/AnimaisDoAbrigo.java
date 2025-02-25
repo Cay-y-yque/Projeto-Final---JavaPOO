@@ -38,6 +38,11 @@ public class AnimaisDoAbrigo extends JFrame{
 		cabecalho.setFont(new Font(" ", Font.PLAIN, 40));
 		conteudo.add(cabecalho);
 		//
+
+		for (int i = 0; i < 3; i ++) {
+			Animal novoAnimal = new Animal();
+			Animal.getListaAnimais().add(novoAnimal);
+		}
 		
 		//Criando um painel que vai representar a área onde os botões de cada animal vão ficar
 		JPanel buttonArea = new JPanel();
