@@ -13,13 +13,10 @@ import javax.swing.JSpinner;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.ArrayList;
-import java.util.List;
 
 public class CadastroAnimal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
-	 public static List<Animal> listaAnimais = new ArrayList<>();
 	private JPanel contentPane;
 	private JTextField txtNome;
 	private JTextField txtRaca;
