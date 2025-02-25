@@ -28,6 +28,7 @@ public class CadastroAdotante extends JFrame {
     private JSpinner spnIdade;
     private JCheckBox chkMoradiaAberta;
     private JComboBox<String> cmbTamanhoMoradia;
+    private JTextField txtIdAnimal;
 
     public static void main(String[] args) {
         EventQueue.invokeLater(new Runnable() {
@@ -99,6 +100,15 @@ public class CadastroAdotante extends JFrame {
         cmbTamanhoMoradia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequena", "Média", "Grande" }));
         cmbTamanhoMoradia.setBounds(282, 104, 120, 22);
         contentPane.add(cmbTamanhoMoradia);
+
+	JLabel lblIdAnimal = new JLabel("ID Animal:");
+        lblIdAnimal.setBounds(10, 134, 80, 14);
+        contentPane.add(lblIdAnimal);
+        
+        txtIdAnimal = new JTextField();
+        txtIdAnimal.setBounds(100, 131, 80, 20);
+        contentPane.add(txtIdAnimal);
+        txtIdAnimal.setColumns(10);
         
         JButton btnCadastrar = new JButton("Cadastrar");
         btnCadastrar.addActionListener(new ActionListener() {
@@ -106,7 +116,7 @@ public class CadastroAdotante extends JFrame {
                 cadastrarAdotante();
             }
         });
-        btnCadastrar.setBounds(160, 150, 120, 23);
+        btnCadastrar.setBounds(160, 180, 120, 23);
         contentPane.add(btnCadastrar);
     }
 
@@ -118,14 +128,22 @@ public class CadastroAdotante extends JFrame {
         	String email = txtEmail.getText();
         	boolean moradiaAberta = chkMoradiaAberta.isSelected();
         	String tamanhoMoradia = cmbTamanhoMoradia.getSelectedItem().toString();
+		int idAnimal = Integer.parseInt(txtIdAnimal.getText());
         	
             Adotante adotante = new Adotante(nome, idade, telefone, email, moradiaAberta, tamanhoMoradia);
             
-            Adotante.listaAdotantes.add(adotante);
+            Adotante.registrar();
+
+	    if(!adotante.adotar(idAnimal)) {
+                throw new Exception("Animal com ID " + idAnimal + " não encontrado!");
+            }
             
             JOptionPane.showMessageDialog(this, "Cadastro realizado com sucesso!");
             limpar();
-            
+		
+        } catch (NumberFormatException ex) {
+            JOptionPane.showMessageDialog(this, "ID do animal inválido! Digite um número válido.",
+                                        "Erro", JOptionPane.ERROR_MESSAGE);    
         } catch (Exception ex) {
             JOptionPane.showMessageDialog(this, "Erro no cadastro: " + ex.getMessage(),
                                         "Erro", JOptionPane.ERROR_MESSAGE);
@@ -138,5 +156,6 @@ public class CadastroAdotante extends JFrame {
         txtEmail.setText("");
         chkMoradiaAberta.setSelected(false);
         cmbTamanhoMoradia.setSelectedIndex(0);
+	txtIdAnimal.setText("");
     }
 }
