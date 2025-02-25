@@ -66,10 +66,10 @@ public class TelaDoAnimal extends JFrame{
 		peso.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(peso);
 		
-		JLabel condicoes = new JLabel("Condições: " + animalCorrespondente.getCondicoes());
-		condicoes.setBounds(10, 383, width, height);
-		condicoes.setFont(new Font("", Font.PLAIN, fontSize));
-		conteudo.add(condicoes);
+		JLabel condicao = new JLabel("Condicao: " + animalCorrespondente.getCondicao());
+		condicao.setBounds(10, 383, width, height);
+		condicao.setFont(new Font("", Font.PLAIN, fontSize));
+		conteudo.add(condicao);
 		
 		JLabel altura = new JLabel("Altura: " + animalCorrespondente.getAltura());
 		altura.setFont(new Font("", Font.PLAIN, fontSize));

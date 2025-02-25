@@ -1,7 +1,7 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
+import com.equipe.POO_projetoFinal.main.Janela;
 import java.awt.Dimension;
-import java.awt.EventQueue;
 import java.awt.FlowLayout;
 import java.awt.Font;
 import java.util.ArrayList;
@@ -13,13 +13,13 @@ import javax.swing.JLabel;
 import com.equipe.POO_projetoFinal.main.Animal;
 
 
-public class AnimaisDoAbrigo extends JFrame{
+public class AnimaisDoAbrigo extends JFrame implements Janela{
 	private static final long serialVersionUID = 1L;
 	private ArrayList<JButton> botoesAnimais = new ArrayList<>();
 	
 	public AnimaisDoAbrigo() {
 		// Setando os atributos do frame
-		this.setDefaultCloseOperation(EXIT_ON_CLOSE);;
+		this.setDefaultCloseOperation(HIDE_ON_CLOSE);;
 		this.setSize(740, 800);
 		this.setResizable(false);
 		this.setLocationRelativeTo(null);
@@ -38,11 +38,6 @@ public class AnimaisDoAbrigo extends JFrame{
 		cabecalho.setFont(new Font(" ", Font.PLAIN, 40));
 		conteudo.add(cabecalho);
 		//
-
-		for (int i = 0; i < 3; i ++) {
-			Animal novoAnimal = new Animal();
-			Animal.getListaAnimais().add(novoAnimal);
-		}
 		
 		//Criando um painel que vai representar a área onde os botões de cada animal vão ficar
 		JPanel buttonArea = new JPanel();
@@ -50,8 +45,6 @@ public class AnimaisDoAbrigo extends JFrame{
 		int alturaInterior = (Animal.getListaAnimais().size() * 40 / 3) + 40;
 		buttonArea.setPreferredSize(new Dimension(640, alturaInterior));
 		//
-		
-		
 		
 		JButton botao = null;
 		//Loop que vai percorrer cada animal da lista e fazer um botão específico para ele.
@@ -78,8 +71,13 @@ public class AnimaisDoAbrigo extends JFrame{
 	
 	}
 	
+	@Override
+	public void mostrarJanela(JFrame janela) {
+		janela.setVisible(true);
+	}
+	
 	// Função que vai ser chamada quando um botão de um animal for clicado.
 	public void criarTelaDoAnimal(int id) {
-		TelaDoAnimal telaA = new TelaDoAnimal(id); // ela instancia uma tela e deixa ela visivel.
-		telaA.setVisible(true);
+		mostrarJanela(new TelaDoAnimal(id));
 	}
+}

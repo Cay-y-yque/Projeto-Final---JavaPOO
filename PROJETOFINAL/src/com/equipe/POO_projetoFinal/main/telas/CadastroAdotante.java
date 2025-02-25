@@ -1,12 +1,10 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
-import java.awt.EventQueue;
+import com.equipe.POO_projetoFinal.main.Cadastro;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-
 import com.equipe.POO_projetoFinal.main.Adotante;
-
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.JTextField;
@@ -18,35 +16,24 @@ import javax.swing.JButton;
 import java.awt.event.ActionListener;
 import java.awt.event.ActionEvent;
 
-public class CadastroAdotante extends JFrame {
+public class CadastroAdotante extends JFrame implements Cadastro{
 	
     private static final long serialVersionUID = 1L;
     private JPanel contentPane;
     private JTextField txtNome;
     private JTextField txtTelefone;
     private JTextField txtEmail;
+    private JTextField txtIdAnimal;
     private JSpinner spnIdade;
     private JCheckBox chkMoradiaAberta;
     private JComboBox<String> cmbTamanhoMoradia;
-    private JTextField txtIdAnimal;
-
-    public static void main(String[] args) {
-        EventQueue.invokeLater(new Runnable() {
-            public void run() {
-                try {
-                    CadastroAdotante frame = new CadastroAdotante();
-                    frame.setVisible(true);
-                } catch (Exception e) {
-                    e.printStackTrace();
-                }
-            }
-        });
-    }
 
     public CadastroAdotante() {
         setTitle("Cadastro de Adotante");
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-        setBounds(100, 100, 450, 300);
+        setDefaultCloseOperation(JFrame.HIDE_ON_CLOSE);
+        setSize(450, 300);
+        setLocationRelativeTo(null);
+        setResizable(false);
         contentPane = new JPanel();
         contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
         setContentPane(contentPane);
@@ -100,8 +87,8 @@ public class CadastroAdotante extends JFrame {
         cmbTamanhoMoradia.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Pequena", "Média", "Grande" }));
         cmbTamanhoMoradia.setBounds(282, 104, 120, 22);
         contentPane.add(cmbTamanhoMoradia);
-
-	JLabel lblIdAnimal = new JLabel("ID Animal:");
+        
+        JLabel lblIdAnimal = new JLabel("ID Animal:");
         lblIdAnimal.setBounds(10, 134, 80, 14);
         contentPane.add(lblIdAnimal);
         
@@ -113,14 +100,16 @@ public class CadastroAdotante extends JFrame {
         JButton btnCadastrar = new JButton("Cadastrar");
         btnCadastrar.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent e) {
-                cadastrarAdotante();
+                cadastrar();
             }
         });
-        btnCadastrar.setBounds(160, 180, 120, 23);
+        btnCadastrar.setBounds(160, 150, 120, 23);
         contentPane.add(btnCadastrar);
     }
-
-    private void cadastrarAdotante() {
+    
+    
+    @Override
+    public void cadastrar() {
         try {
         	String nome = txtNome.getText();
         	int idade = (int) spnIdade.getValue();
@@ -128,11 +117,11 @@ public class CadastroAdotante extends JFrame {
         	String email = txtEmail.getText();
         	boolean moradiaAberta = chkMoradiaAberta.isSelected();
         	String tamanhoMoradia = cmbTamanhoMoradia.getSelectedItem().toString();
-		int idAnimal = Integer.parseInt(txtIdAnimal.getText());
+        	int idAnimal = Integer.parseInt(txtIdAnimal.getText());
         	
             Adotante adotante = new Adotante(nome, idade, telefone, email, moradiaAberta, tamanhoMoradia);
-            
             adotante.registrar();
+            
 
 	    if(adotante.adotar(idAnimal)) {
             JOptionPane.showMessageDialog(this, "Cadastro e adoção realizados com sucesso!");
@@ -140,7 +129,7 @@ public class CadastroAdotante extends JFrame {
             } else {
             JOptionPane.showMessageDialog(this, "Animal não encontrado! Cadastro cancelado.",
                                         "Erro", JOptionPane.ERROR_MESSAGE);
-            Adotante.listaAdotantes.remove(adotante);
+            adotante.remover();
         }
 		
         } catch (NumberFormatException ex) {
@@ -158,6 +147,6 @@ public class CadastroAdotante extends JFrame {
         txtEmail.setText("");
         chkMoradiaAberta.setSelected(false);
         cmbTamanhoMoradia.setSelectedIndex(0);
-	txtIdAnimal.setText("");
+        txtIdAnimal.setText("");
     }
 }

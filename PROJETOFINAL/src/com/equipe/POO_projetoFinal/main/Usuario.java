@@ -3,7 +3,6 @@ package com.equipe.POO_projetoFinal.main;
 public abstract class Usuario {
     private String nome;
     private int idade;
-    private String[] listaAnimais;
     
     public Usuario(String nome, int idade){
     	this.idade = idade;
@@ -11,9 +10,10 @@ public abstract class Usuario {
     }
 	
     public Usuario() {}
-	
-    public abstract void registrar();
     
+    public abstract void registrar();
+    public abstract void remover();
+	
 	public String getNome() {
 		return nome;
 	}
@@ -28,10 +28,4 @@ public abstract class Usuario {
 		this.idade = idade;
 	}
 
-	public String[] getListaAnimais() {
-		return listaAnimais;
-	}
-	public void setListaAnimais(String[] listaAnimais) {
-		this.listaAnimais = listaAnimais;
-	}
 }

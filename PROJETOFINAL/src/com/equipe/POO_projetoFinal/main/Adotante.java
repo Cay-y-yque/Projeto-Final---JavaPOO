@@ -58,6 +58,10 @@ public class Adotante extends Usuario {
 	public void registrar() {
 		Adotante.listaAdotantes.add(this);
 	}
+	@Override
+	public void remover() {
+		Adotante.listaAdotantes.remove(this);
+	}
 
 	public boolean adotar(int id) {
 		Iterator<Animal> iterator = Animal.getListaAnimais().iterator();

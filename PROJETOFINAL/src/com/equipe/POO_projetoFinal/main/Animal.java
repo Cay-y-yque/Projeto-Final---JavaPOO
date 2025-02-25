@@ -3,37 +3,52 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Animal extends Usuario{
+	//Definindo os atributos
 	private String raca;
 	private String personalidade;
 	private double peso;
-	private String condicoes;
+	private String condicao;
 	private double altura;
 	private final int id;
 	private static int contador;
 	private static List<Animal> listaAnimais = new ArrayList<>();
+	//
 	
+	//primeiro construtor
 	public Animal(){
 		super();
 		
 		contador++;
-		id = contador;
+		id = contador; //dá o id com base na numeração de sua criação.
 	}
+	//
 	
-	public Animal(String nome, int idade, String raca, String personalidade, double peso, String condicoes, double altura){
+	//segundo construtor
+	public Animal(String nome, int idade, String raca, String personalidade, double peso, String condicao, double altura){
 		super(nome, idade);
 		this.raca = raca;
 		this.personalidade = personalidade;
 		this.peso = peso;
-		this.condicoes = condicoes;
+		this.condicao = condicao;
 		this.altura = altura;
 		
 		contador++;
 		id = contador;
 	}
+	//
 	
-	public String pegarPorte() {
-		return "PlaceHolder";
+	//Métodos da classe
+	
+	//Sobrescrita dos métodos abstratos
+	@Override
+	public void registrar() {
+		Animal.getListaAnimais().add(this);
 	}
+	@Override
+	public void remover() {
+		Animal.getListaAnimais().remove(this);
+	}
+	//
 
 	public String getRaca() {
 		return raca;
@@ -59,12 +74,12 @@ public class Animal extends Usuario{
 		this.peso = peso;
 	}
 
-	public String getCondicoes() {
-		return condicoes;
+	public String getCondicao() {
+		return condicao;
 	}
 
-	public void setCondicoes(String condicoes) {
-		this.condicoes = condicoes;
+	public void setCondicao(String condicao) {
+		this.condicao = condicao;
 	}
 
 	public double getAltura() {
@@ -86,6 +101,6 @@ public class Animal extends Usuario{
 	public int getId() {
 		return id;
 	}
-
+	//
 	
 }
