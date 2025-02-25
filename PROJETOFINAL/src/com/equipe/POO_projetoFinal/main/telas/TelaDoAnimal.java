@@ -46,7 +46,7 @@ public class TelaDoAnimal extends JFrame{
 		nome.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(nome);
 		
-		JLabel idade = new JLabel("Idade: " + animalCorrespondente.getIdade());
+		JLabel idade = new JLabel("Idade: " + animalCorrespondente.getIdade() + " anos");
 		idade.setBounds(10, 321, width, height);
 		idade.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(idade);
@@ -61,7 +61,7 @@ public class TelaDoAnimal extends JFrame{
 		personalidade.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(personalidade);
 		
-		JLabel peso = new JLabel("Peso: " + animalCorrespondente.getPeso());
+		JLabel peso = new JLabel("Peso: " + animalCorrespondente.getPeso() + "kg");
 		peso.setBounds(10, 445, width, height);
 		peso.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(peso);
@@ -71,7 +71,7 @@ public class TelaDoAnimal extends JFrame{
 		condicao.setFont(new Font("", Font.PLAIN, fontSize));
 		conteudo.add(condicao);
 		
-		JLabel altura = new JLabel("Altura: " + animalCorrespondente.getAltura());
+		JLabel altura = new JLabel("Altura: " + animalCorrespondente.getAltura() + "cm");
 		altura.setFont(new Font("", Font.PLAIN, fontSize));
 		altura.setBounds(10, 414, width, height);
 		conteudo.add(altura);
