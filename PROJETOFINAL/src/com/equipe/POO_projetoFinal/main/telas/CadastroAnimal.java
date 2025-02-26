@@ -1,6 +1,7 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
 import com.equipe.POO_projetoFinal.main.Animal;
+
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -13,13 +14,14 @@ import javax.swing.JSpinner;
 import java.awt.Color;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.SwingConstants;
 
 public class CadastroAnimal extends JFrame {
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
 	private JTextField txtNome;
-	private JTextField txtRaca;
+	private JTextField txtTipoDoAnimal;
 	private JTextField txtPeso;
 	private JTextField txtAltura;
 	private JTextField txtPersonalidade;
@@ -40,70 +42,78 @@ public class CadastroAnimal extends JFrame {
 		contentPane.setLayout(null);
 		
 		JLabel lblCabecalho = new JLabel("<Cadastre um Animal>");
-		lblCabecalho.setBounds(166, 11, 130, 15);
+		lblCabecalho.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCabecalho.setBounds(152, 11, 130, 15);
 		contentPane.add(lblCabecalho);
 		
 		JLabel lblNome = new JLabel("Nome");
-		lblNome.setBounds(35, 37, 46, 14);
+		lblNome.setHorizontalAlignment(SwingConstants.CENTER);
+		lblNome.setBounds(118, 37, 86, 14);
 		contentPane.add(lblNome);
 		
 		txtNome = new JTextField();
-		txtNome.setBounds(10, 51, 86, 20);
+		txtNome.setBounds(118, 52, 86, 20);
 		contentPane.add(txtNome);
 		txtNome.setColumns(10);
 		
 		JLabel lblIdade = new JLabel("Idade");
-		lblIdade.setBounds(35, 82, 46, 14);
+		lblIdade.setHorizontalAlignment(SwingConstants.CENTER);
+		lblIdade.setBounds(198, 182, 40, 14);
 		contentPane.add(lblIdade);
 		
-		JLabel lblRaca = new JLabel("Raça");
-		lblRaca.setBounds(148, 82, 46, 14);
-		contentPane.add(lblRaca);
+		JLabel lblTipoDoAnimal = new JLabel("Tipo Do Animal");
+		lblTipoDoAnimal.setHorizontalAlignment(SwingConstants.CENTER);
+		lblTipoDoAnimal.setBounds(227, 37, 86, 14);
+		contentPane.add(lblTipoDoAnimal);
 		
 		spnIdade = new JSpinner();
-		spnIdade.setBounds(35, 107, 30, 20);
-		spnIdade.setModel(new SpinnerNumberModel(18, 0, 120, 1));
+		spnIdade.setBounds(198, 197, 40, 20);
+		spnIdade.setModel(new SpinnerNumberModel(1, 0, 120, 1));
 		contentPane.add(spnIdade);
 		
-		txtRaca = new JTextField();
-		txtRaca.setBounds(119, 107, 86, 20);
-		contentPane.add(txtRaca);
-		txtRaca.setColumns(10);
+		txtTipoDoAnimal = new JTextField();
+		txtTipoDoAnimal.setBounds(227, 52, 86, 20);
+		contentPane.add(txtTipoDoAnimal);
+		txtTipoDoAnimal.setColumns(10);
 		
 		JLabel lblPeso = new JLabel("Peso");
-		lblPeso.setBounds(35, 138, 46, 14);
+		lblPeso.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPeso.setBounds(118, 83, 86, 14);
 		contentPane.add(lblPeso);
 		
 		txtPeso = new JTextField();
-		txtPeso.setBounds(10, 157, 86, 20);
+		txtPeso.setBounds(118, 99, 86, 20);
 		contentPane.add(txtPeso);
 		txtPeso.setColumns(10);
 		
 		txtAltura = new JTextField();
-		txtAltura.setBounds(119, 157, 86, 20);
+		txtAltura.setBounds(227, 99, 86, 20);
 		contentPane.add(txtAltura);
 		txtAltura.setColumns(10);
 		
 		JLabel lblAltura = new JLabel("Altura");
-		lblAltura.setBounds(148, 138, 46, 14);
+		lblAltura.setHorizontalAlignment(SwingConstants.CENTER);
+		lblAltura.setBounds(227, 83, 86, 14);
 		contentPane.add(lblAltura);
 		
 		JLabel lblPersonalidade = new JLabel("Personalidade");
-		lblPersonalidade.setBounds(20, 188, 74, 14);
+		lblPersonalidade.setHorizontalAlignment(SwingConstants.CENTER);
+		lblPersonalidade.setBounds(118, 130, 86, 20);
 		contentPane.add(lblPersonalidade);
 		
 		txtPersonalidade = new JTextField();
-		txtPersonalidade.setBounds(10, 211, 86, 20);
+		txtPersonalidade.setBounds(118, 151, 86, 20);
 		contentPane.add(txtPersonalidade);
 		txtPersonalidade.setColumns(10);
 		
 		JLabel lblCondicao = new JLabel("Condicao");
-		lblCondicao.setBounds(131, 188, 74, 14);
+		lblCondicao.setHorizontalAlignment(SwingConstants.CENTER);
+		lblCondicao.setBounds(227, 133, 86, 14);
 		contentPane.add(lblCondicao);
 		
 		
 		txtCondicao = new JTextField();
-		txtCondicao.setBounds(119, 211, 86, 20);
+		txtCondicao.setBounds(227, 151, 86, 20);
 		contentPane.add(txtCondicao);
 		getContentPane().setBackground(new Color(0xFFF8DB));
 		txtCondicao.setColumns(10);
@@ -114,7 +124,7 @@ public class CadastroAnimal extends JFrame {
 	                cadastrarAnimal();
 	            }
 	        });
-	        btnCadastrar.setBounds(250, 200, 150, 30);
+	        btnCadastrar.setBounds(274, 220, 150, 30);
 	        contentPane.add(btnCadastrar);
 	}
             
@@ -123,13 +133,13 @@ public class CadastroAnimal extends JFrame {
 	  
 	      	String nome = txtNome.getText();
 	      	int idade = (int) spnIdade.getValue();
-	      	String raca = txtRaca.getText();
+	      	String tipoDoAnimal = txtTipoDoAnimal.getText();
 	      	String condicao = txtCondicao.getText();
 	      	String personalidade = txtPersonalidade.getText();
 	      	double peso = Double.parseDouble(txtPeso.getText());
 	      	double altura = Double.parseDouble(txtAltura.getText());
 	      
-			Animal animal = new Animal(nome, idade, raca, personalidade, peso, condicao, altura);
+			Animal animal = new Animal(nome, idade, tipoDoAnimal, personalidade, peso, condicao, altura);
 	          
 	        animal.registrar();
 	         
@@ -140,8 +150,8 @@ public class CadastroAnimal extends JFrame {
 		 }
 		 finally {
 			 txtNome.setText("");
-			 spnIdade.setValue(18);
-			 txtRaca.setText("");
+			 spnIdade.setValue(1);
+			 txtTipoDoAnimal.setText("");
 			 txtCondicao.setText("");
 			 txtPersonalidade.setText("");
 			 txtPeso.setText("");
