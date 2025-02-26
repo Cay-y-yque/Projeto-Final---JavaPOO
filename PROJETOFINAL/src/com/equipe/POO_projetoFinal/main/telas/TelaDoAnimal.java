@@ -44,41 +44,49 @@ public class TelaDoAnimal extends JFrame{
 		JLabel nome = new JLabel("Nome: " + animalCorrespondente.getNome());
 		nome.setBounds(10, 290, width, height);
 		nome.setFont(new Font("", Font.PLAIN, fontSize));
+		nome.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(nome);
 		
 		JLabel idade = new JLabel("Idade: " + animalCorrespondente.getIdade() + " anos");
 		idade.setBounds(10, 321, width, height);
 		idade.setFont(new Font("", Font.PLAIN, fontSize));
+		idade.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(idade);
 		
-		JLabel raca = new JLabel("Raca: " + animalCorrespondente.getRaca());
-		raca.setBounds(10, 352, width, height);
-		raca.setFont(new Font("", Font.PLAIN, fontSize));
-		conteudo.add(raca);
+		JLabel tipoDoAnimal = new JLabel("Animal: " + animalCorrespondente.getTipoDoAnimal());
+		tipoDoAnimal.setBounds(10, 352, width, height);
+		tipoDoAnimal.setFont(new Font("", Font.PLAIN, fontSize));
+		tipoDoAnimal.setHorizontalAlignment(JLabel.CENTER);
+		conteudo.add(tipoDoAnimal);
 		
 		JLabel personalidade = new JLabel("Personalidade: " + animalCorrespondente.getPersonalidade());
 		personalidade.setBounds(10, 476, width, height);
 		personalidade.setFont(new Font("", Font.PLAIN, fontSize));
+		personalidade.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(personalidade);
 		
-		JLabel peso = new JLabel("Peso: " + animalCorrespondente.getPeso() + "kg");
+		JLabel peso = new JLabel("Peso: " + animalCorrespondente.getPeso() + " kg");
 		peso.setBounds(10, 445, width, height);
 		peso.setFont(new Font("", Font.PLAIN, fontSize));
+		peso.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(peso);
 		
 		JLabel condicao = new JLabel("Condicao: " + animalCorrespondente.getCondicao());
 		condicao.setBounds(10, 383, width, height);
 		condicao.setFont(new Font("", Font.PLAIN, fontSize));
+		condicao.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(condicao);
 		
-		JLabel altura = new JLabel("Altura: " + animalCorrespondente.getAltura() + "cm");
+		JLabel altura = new JLabel("Altura: " + animalCorrespondente.getAltura() + " cm");
 		altura.setFont(new Font("", Font.PLAIN, fontSize));
 		altura.setBounds(10, 414, width, height);
+		altura.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(altura);
 		
 		JLabel textId = new JLabel("ID: " + id);
 		textId.setFont(new Font("", Font.PLAIN, fontSize));
 		textId.setBounds(0, 0, 120, 20);
+		idade.setHorizontalAlignment(JLabel.CENTER);
 		conteudo.add(textId);
 		//
 		
