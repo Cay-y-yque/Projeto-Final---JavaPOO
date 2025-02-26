@@ -24,9 +24,9 @@ public class Animal extends Usuario{
 	//
 	
 	//segundo construtor
-	public Animal(String nome, int idade, String raca, String personalidade, double peso, String condicao, double altura){
+	public Animal(String nome, int idade, String tipoDoAnimal, String personalidade, double peso, String condicao, double altura){
 		super(nome, idade);
-		this.tipoDoAnimal = raca;
+		this.tipoDoAnimal = tipoDoAnimal;
 		this.personalidade = personalidade;
 		this.peso = peso;
 		this.condicao = condicao;
@@ -54,7 +54,7 @@ public class Animal extends Usuario{
 		return tipoDoAnimal;
 	}
 
-	public void setRaca(String tipoDoAnimal) {
+	public void setTipoDoAnimal(String tipoDoAnimal) {
 		this.tipoDoAnimal = tipoDoAnimal;
 	}
 
