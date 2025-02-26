@@ -111,10 +111,9 @@ public class AbrigoPorteLivre extends JFrame {
 		cadastroAdotante.setVisible(true);
 	}
 	
-	// QUANDO HOUVER UMA CLASSE CHAMADA CadastroAnimal -> RETIRE O COMENTARIO!!
 	
-	//private void cadastrarAnimal() {
-		//CadastroAnimal cadastroAnimal = new CadastroAnimal();
-		//cadastroAnimal.setVisible();
-	//}
+	private void cadastrarAnimal() {
+		CadastroAnimal cadastroAnimal = new CadastroAnimal();
+		cadastroAnimal.setVisible();
+	}
 	
