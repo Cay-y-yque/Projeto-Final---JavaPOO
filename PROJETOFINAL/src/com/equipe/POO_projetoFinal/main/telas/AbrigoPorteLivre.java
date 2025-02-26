@@ -58,12 +58,7 @@ public class AbrigoPorteLivre extends JFrame {
 		JButton btnCadastrarAnimal = new JButton("Cadastrar Animal");
 		btnCadastrarAnimal.setBounds(30, 46, 157, 33);
 		//TODO: fazer botão abrir nova tela de cadastro para o Animal
-		btnCadastrarAnimal.addActionListener(new ActionListener() {
-			public void actionPerformed(ActionEvent e) {
-				System.out.println("Passando para tela de cadastro de animais...");
-				
-			}
-		});
+		btnCadastrarAnimal.addActionListener(e -> cadastrarAnimal());
 		contentPane.setLayout(null);
 		contentPane.add(btnCadastrarAnimal);
 		
@@ -114,6 +109,6 @@ public class AbrigoPorteLivre extends JFrame {
 	
 	private void cadastrarAnimal() {
 		CadastroAnimal cadastroAnimal = new CadastroAnimal();
-		cadastroAnimal.setVisible();
+		cadastroAnimal.setVisible(true);
 	}
 	
