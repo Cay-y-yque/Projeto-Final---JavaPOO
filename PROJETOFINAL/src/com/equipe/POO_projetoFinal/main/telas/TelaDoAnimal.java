@@ -9,7 +9,7 @@ import com.equipe.POO_projetoFinal.main.Animal;
 
 public class TelaDoAnimal extends JFrame{
 	private static final long serialVersionUID = 1L;
-	Animal animalCorrespondente;
+	private Animal animalCorrespondente;
 	
 	public TelaDoAnimal(int id) {
 		// Através do ID, pega o animal correspondente ao botão clicado.
