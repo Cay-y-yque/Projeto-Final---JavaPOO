@@ -4,7 +4,7 @@ import java.util.List;
 
 public class Animal extends Usuario{
 	//Definindo os atributos
-	private String raca;
+	private String tipoDoAnimal;
 	private String personalidade;
 	private double peso;
 	private String condicao;
@@ -26,7 +26,7 @@ public class Animal extends Usuario{
 	//segundo construtor
 	public Animal(String nome, int idade, String raca, String personalidade, double peso, String condicao, double altura){
 		super(nome, idade);
-		this.raca = raca;
+		this.tipoDoAnimal = raca;
 		this.personalidade = personalidade;
 		this.peso = peso;
 		this.condicao = condicao;
@@ -50,12 +50,12 @@ public class Animal extends Usuario{
 	}
 	//
 
-	public String getRaca() {
-		return raca;
+	public String getTipoDoAnimal() {
+		return tipoDoAnimal;
 	}
 
-	public void setRaca(String raca) {
-		this.raca = raca;
+	public void setRaca(String tipoDoAnimal) {
+		this.tipoDoAnimal = tipoDoAnimal;
 	}
 
 	public String getPersonalidade() {
