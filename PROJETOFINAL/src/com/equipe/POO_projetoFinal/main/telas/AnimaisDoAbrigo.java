@@ -4,7 +4,6 @@ import com.equipe.POO_projetoFinal.main.Janela;
 import java.awt.Dimension;
 import java.awt.FlowLayout;
 import java.awt.Font;
-import java.util.ArrayList;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.JScrollPane;
@@ -15,7 +14,6 @@ import com.equipe.POO_projetoFinal.main.Animal;
 
 public class AnimaisDoAbrigo extends JFrame implements Janela{
 	private static final long serialVersionUID = 1L;
-	private ArrayList<JButton> botoesAnimais = new ArrayList<>();
 	
 	public AnimaisDoAbrigo() {
 		// Setando os atributos do frame
@@ -53,11 +51,8 @@ public class AnimaisDoAbrigo extends JFrame implements Janela{
 			final Animal animal = Animal.getListaAnimais().get(i-1);
 			botao = new JButton("ID: " + animal.getId() + " | " + "Nome: " + animal.getNome());
 			botao.setPreferredSize(new Dimension(200, 30));
-
 			botao.addActionListener(e -> criarTelaDoAnimal(animal.getId()));
-			
-			buttonArea.add(botao);
-			botoesAnimais.add(botao);
+			buttonArea.add(botao);;
 
 		}
 		//
