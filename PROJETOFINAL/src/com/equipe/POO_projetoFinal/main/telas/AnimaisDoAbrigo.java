@@ -40,7 +40,7 @@ public class AnimaisDoAbrigo extends JFrame implements Janela{
 		//Criando um painel que vai representar a área onde os botões de cada animal vão ficar
 		JPanel buttonArea = new JPanel();
 		buttonArea.setLayout(new FlowLayout(FlowLayout.LEFT, 20 , 20));
-		int alturaInterior = (Animal.getListaAnimais().size() * 40 / 3) + 40;
+		int alturaInterior = (Animal.getListaAnimais().size() * 50 / 3) + 40;
 		buttonArea.setPreferredSize(new Dimension(640, alturaInterior));
 		//
 		
