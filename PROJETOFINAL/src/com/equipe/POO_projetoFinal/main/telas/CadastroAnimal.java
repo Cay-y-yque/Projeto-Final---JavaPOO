@@ -1,7 +1,7 @@
 package com.equipe.POO_projetoFinal.main.telas;
 
+import com.equipe.POO_projetoFinal.main.Cadastro;
 import com.equipe.POO_projetoFinal.main.Animal;
-
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
@@ -16,7 +16,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.SwingConstants;
 
-public class CadastroAnimal extends JFrame {
+public class CadastroAnimal extends JFrame implements Cadastro{
 
 	private static final long serialVersionUID = 1L;
 	private JPanel contentPane;
@@ -121,14 +121,15 @@ public class CadastroAnimal extends JFrame {
 		 JButton btnCadastrar = new JButton("CADASTRAR");
 	        btnCadastrar.addActionListener(new ActionListener() {
 	            public void actionPerformed(ActionEvent e) {
-	                cadastrarAnimal();
+	                cadastrar();
 	            }
 	        });
 	        btnCadastrar.setBounds(274, 220, 150, 30);
 	        contentPane.add(btnCadastrar);
 	}
-            
-	  private void cadastrarAnimal() { 
+      
+      @Override
+	  public void cadastrar() { 
 		try {
 	  
 	      	String nome = txtNome.getText();
