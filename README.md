@@ -1,4 +1,5 @@
 # Projeto-Final---JavaPOO
-algo muito legal para animais
 
-HEHEHE PAPO RETO
+Aplicação para registro de animais e adotantes.
+
+Veja a branch final para acessar o projeto.
